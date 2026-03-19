@@ -43,24 +43,27 @@
             // 
             // imie
             // 
-            imie.Location = new Point(95, 53);
+            imie.Location = new Point(66, 32);
+            imie.Margin = new Padding(2, 2, 2, 2);
             imie.Name = "imie";
-            imie.Size = new Size(180, 31);
+            imie.Size = new Size(127, 23);
             imie.TabIndex = 0;
             // 
             // nazw
             // 
-            nazw.Location = new Point(95, 131);
+            nazw.Location = new Point(66, 79);
+            nazw.Margin = new Padding(2, 2, 2, 2);
             nazw.Name = "nazw";
-            nazw.Size = new Size(180, 31);
+            nazw.Size = new Size(127, 23);
             nazw.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(429, 59);
+            label1.Location = new Point(300, 35);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(46, 25);
+            label1.Size = new Size(30, 15);
             label1.TabIndex = 4;
             label1.Text = "Imie";
             label1.Click += label1_Click;
@@ -68,9 +71,10 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(429, 131);
+            label2.Location = new Point(300, 79);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(87, 25);
+            label2.Size = new Size(57, 15);
             label2.TabIndex = 5;
             label2.Text = "Nazwisko";
             label2.Click += label2_Click;
@@ -78,26 +82,29 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(429, 214);
+            label3.Location = new Point(300, 128);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(51, 25);
+            label3.Size = new Size(33, 15);
             label3.TabIndex = 6;
             label3.Text = "Wiek";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(429, 302);
+            label4.Location = new Point(300, 181);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(102, 25);
+            label4.Size = new Size(67, 15);
             label4.TabIndex = 7;
             label4.Text = "Stanowisko";
             // 
             // zatwierdz
             // 
-            zatwierdz.Location = new Point(114, 388);
+            zatwierdz.Location = new Point(80, 233);
+            zatwierdz.Margin = new Padding(2, 2, 2, 2);
             zatwierdz.Name = "zatwierdz";
-            zatwierdz.Size = new Size(112, 34);
+            zatwierdz.Size = new Size(78, 26);
             zatwierdz.TabIndex = 8;
             zatwierdz.Text = "Zatwierdz";
             zatwierdz.UseVisualStyleBackColor = true;
@@ -105,34 +112,37 @@
             // 
             // anuluj
             // 
-            anuluj.Location = new Point(397, 388);
+            anuluj.Location = new Point(278, 233);
+            anuluj.Margin = new Padding(2, 2, 2, 2);
             anuluj.Name = "anuluj";
-            anuluj.Size = new Size(112, 34);
+            anuluj.Size = new Size(78, 26);
             anuluj.TabIndex = 9;
             anuluj.Text = "Anuluj";
             anuluj.UseVisualStyleBackColor = true;
             // 
             // wiek
             // 
-            wiek.Location = new Point(93, 208);
+            wiek.Location = new Point(65, 125);
+            wiek.Margin = new Padding(2, 2, 2, 2);
             wiek.Name = "wiek";
-            wiek.Size = new Size(182, 31);
+            wiek.Size = new Size(127, 23);
             wiek.TabIndex = 10;
             // 
             // stanowisko
             // 
             stanowisko.FormattingEnabled = true;
             stanowisko.Items.AddRange(new object[] { "Stanowisko1", "Stanowisko2", "Stanowisko3" });
-            stanowisko.Location = new Point(93, 294);
+            stanowisko.Location = new Point(65, 176);
+            stanowisko.Margin = new Padding(2, 2, 2, 2);
             stanowisko.Name = "stanowisko";
-            stanowisko.Size = new Size(182, 33);
+            stanowisko.Size = new Size(129, 23);
             stanowisko.TabIndex = 11;
             // 
             // Form2
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(617, 450);
+            ClientSize = new Size(432, 270);
             Controls.Add(stanowisko);
             Controls.Add(wiek);
             Controls.Add(anuluj);
@@ -143,6 +153,7 @@
             Controls.Add(label1);
             Controls.Add(nazw);
             Controls.Add(imie);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "Form2";
             Text = "Form2";
             ((System.ComponentModel.ISupportInitialize)wiek).EndInit();

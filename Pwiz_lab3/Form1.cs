@@ -1,3 +1,4 @@
+using System.Data;
 using System.Net.Sockets;
 
 namespace Pwiz_lab3
@@ -28,6 +29,33 @@ namespace Pwiz_lab3
 
         }
 
+        private void LoadCSVToDataGridView(string filePath)
+        {
+            // SprawdŸ, czy plik istnieje
+            if (!File.Exists(filePath))
+            {
+                MessageBox.Show("Plik CSV nie istnieje.", "B³¹d", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string[] lines = File.ReadAllLines(filePath);
+            // Tworzenie tabeli danych
+            DataTable dataTable = new DataTable();
+            // Dodawanie wierszy do tabeli danych
+            for (int i = 1; i < lines.Length; i++)
+            {
+                string[] values = lines[i].Split(',');
+                dataGridView1.Rows.Add(values);
+
+            }
+            MessageBox.Show(
+                "Dodano Wiersze z pliku CSV.",
+                "Odczyt z CSV", MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+        }
+
+
+
         public Form2 form2;
         public Form1()
         {
@@ -52,7 +80,7 @@ namespace Pwiz_lab3
 
         private void usun_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.Rows.Count > 1)
+            if (dataGridView1.SelectedRows.Count >= 1)
             {
                 dataGridView1.Rows.Remove(dataGridView1.SelectedRows[0]);
             }
@@ -68,6 +96,16 @@ namespace Pwiz_lab3
             //SaveFileDialog openFileDialog = new SaveFileDialog();
             //openFileDialog.ShowDialog(this);
             ExportToCSV(dataGridView1, "dane.csv");
+            MessageBox.Show(
+                "Zapisano zawartoœæ tabeli w pliku dane.csv",
+                "Zapis do CSV", MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+
+        }
+
+        private void odczyt_Click(object sender, EventArgs e)
+        {
+            LoadCSVToDataGridView("dane.csv");
         }
     }
 }
