@@ -33,26 +33,25 @@
             odczyt = new Button();
             dodaj = new Button();
             usun = new Button();
+            export = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(54, 35);
-            dataGridView1.Margin = new Padding(2, 2, 2, 2);
+            dataGridView1.Location = new Point(77, 58);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(422, 207);
+            dataGridView1.Size = new Size(603, 345);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // csv
             // 
-            csv.Location = new Point(54, 283);
-            csv.Margin = new Padding(2, 2, 2, 2);
+            csv.Location = new Point(77, 472);
             csv.Name = "csv";
-            csv.Size = new Size(144, 28);
+            csv.Size = new Size(206, 47);
             csv.TabIndex = 1;
             csv.Text = "Zapis do CSV";
             csv.UseVisualStyleBackColor = true;
@@ -60,10 +59,9 @@
             // 
             // odczyt
             // 
-            odczyt.Location = new Point(335, 283);
-            odczyt.Margin = new Padding(2, 2, 2, 2);
+            odczyt.Location = new Point(479, 472);
             odczyt.Name = "odczyt";
-            odczyt.Size = new Size(141, 28);
+            odczyt.Size = new Size(201, 47);
             odczyt.TabIndex = 2;
             odczyt.Text = "Odczyt z CSV";
             odczyt.UseVisualStyleBackColor = true;
@@ -71,10 +69,9 @@
             // 
             // dodaj
             // 
-            dodaj.Location = new Point(533, 81);
-            dodaj.Margin = new Padding(2, 2, 2, 2);
+            dodaj.Location = new Point(761, 135);
             dodaj.Name = "dodaj";
-            dodaj.Size = new Size(78, 29);
+            dodaj.Size = new Size(111, 48);
             dodaj.TabIndex = 3;
             dodaj.Text = "Dodaj";
             dodaj.UseVisualStyleBackColor = true;
@@ -82,26 +79,35 @@
             // 
             // usun
             // 
-            usun.Location = new Point(533, 182);
-            usun.Margin = new Padding(2, 2, 2, 2);
+            usun.Location = new Point(761, 303);
             usun.Name = "usun";
-            usun.Size = new Size(78, 27);
+            usun.Size = new Size(111, 45);
             usun.TabIndex = 4;
             usun.Text = "Usun";
             usun.UseVisualStyleBackColor = true;
             usun.Click += usun_Click;
             // 
+            // export
+            // 
+            export.Location = new Point(760, 472);
+            export.Name = "export";
+            export.Size = new Size(112, 47);
+            export.TabIndex = 5;
+            export.Text = "XML";
+            export.UseVisualStyleBackColor = true;
+            export.Click += export_Click;
+            // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(663, 343);
+            ClientSize = new Size(947, 572);
+            Controls.Add(export);
             Controls.Add(usun);
             Controls.Add(dodaj);
             Controls.Add(odczyt);
             Controls.Add(csv);
             Controls.Add(dataGridView1);
-            Margin = new Padding(2, 2, 2, 2);
             Name = "Form1";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -115,5 +121,6 @@
         private Button odczyt;
         private Button dodaj;
         private Button usun;
+        private Button export;
     }
 }

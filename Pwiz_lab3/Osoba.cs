@@ -1,0 +1,47 @@
+﻿using System;
+using System.IO;
+using System.Xml.Serialization;
+// Klasa reprezentująca informacje osobowe
+[Serializable]
+public class Person
+{
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public int Age { get; set; }
+    public string Stanowisko { get; set; }
+    // Konstruktor
+    public Person()
+    {
+        FirstName = "Brak Imienia";
+        LastName = "Brak Nazwiska";
+        Age = 0;
+        Stanowisko = "Brak Stanowiska";
+    }
+    public Person(string firstName, string lastName, int age, string stanowisko)
+    {
+        FirstName = firstName;
+        LastName = lastName;
+        Age = age;
+        Stanowisko = stanowisko;
+    }
+    // Metoda do deserializacji z XML
+    public static Person DeserializeFromXML(string fileName)
+    {
+        XmlSerializer serializer = new XmlSerializer(typeof(Person));
+        using (TextReader reader = new StreamReader(fileName))
+        {
+            Person person = (Person)serializer.Deserialize(reader);
+            Console.WriteLine("Obiekt został odczytany z pliku XML.");
+            return person;
+        }
+    }
+    // Metoda do wyświetlania informacji o osobie
+    public void DisplayInfo()
+    {
+        Console.WriteLine("Imię: " + FirstName);
+        Console.WriteLine("Nazwisko: " + LastName);
+        Console.WriteLine("Wiek: " + Age);
+        Console.WriteLine("Stanowisko: " + Stanowisko);
+    }
+    
+}
