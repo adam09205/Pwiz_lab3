@@ -1,5 +1,7 @@
 using System.Data;
 using System.Net.Sockets;
+using System.Text.Json;
+using System.Xml.Serialization;
 
 namespace Pwiz_lab3
 {
@@ -106,6 +108,31 @@ namespace Pwiz_lab3
         private void odczyt_Click(object sender, EventArgs e)
         {
             LoadCSVToDataGridView("dane.csv");
+        }
+
+        private void export_Click(object sender, EventArgs e)
+        {
+            List<Person> listaOsob = new List<Person>();
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                var imie = dataGridView1.Rows[i].Cells[0].Value;
+                var nazw = dataGridView1.Rows[i].Cells[1].Value;
+                var wiek = Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value);
+                var stanowisko = dataGridView1.Rows[i].Cells[3].Value;
+                if (imie is not null && nazw is not null && stanowisko is not null)
+                {
+                    Person osoba = new Person(imie.ToString(), nazw.ToString(), wiek, stanowisko.ToString());
+                    listaOsob.Add(osoba);
+                }
+
+            }
+            string fileName = "dane.json";
+            string jsonString = JsonSerializer.Serialize(listaOsob);
+            File.WriteAllText(fileName, jsonString);
+            MessageBox.Show(
+               "Zapisano zawartoœæ tabeli w pliku dane.json",
+               "Zapis do JSON", MessageBoxButtons.OK,
+               MessageBoxIcon.Information);
         }
     }
 }
