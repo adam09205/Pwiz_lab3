@@ -24,17 +24,7 @@ public class Person
         Age = age;
         Stanowisko = stanowisko;
     }
-    // Metoda do deserializacji z XML
-    public static Person DeserializeFromXML(string fileName)
-    {
-        XmlSerializer serializer = new XmlSerializer(typeof(Person));
-        using (TextReader reader = new StreamReader(fileName))
-        {
-            Person person = (Person)serializer.Deserialize(reader);
-            Console.WriteLine("Obiekt został odczytany z pliku XML.");
-            return person;
-        }
-    }
+
     // Metoda do wyświetlania informacji o osobie
     public void DisplayInfo()
     {

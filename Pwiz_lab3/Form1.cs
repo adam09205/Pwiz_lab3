@@ -132,7 +132,12 @@ namespace Pwiz_lab3
             {
                 serializer.Serialize(writer, listaOsob);
             }
-            Console.WriteLine("Obiekt zosta³ zserializowany do pliku XML.");
+            MessageBox.Show(
+               "Zapisano zawartoœæ tabeli w pliku dane.xml",
+               "Zapis do XML", MessageBoxButtons.OK,
+               MessageBoxIcon.Information);
+
         }
     }
-}
+    }
+
